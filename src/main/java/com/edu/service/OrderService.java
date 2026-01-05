@@ -17,8 +17,11 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
+    /*@Autowired
+    private KafkaTemplate<String, OrderEvent> kafkaTemplate;*/
+
     @Autowired
-    private KafkaTemplate<String, OrderEvent> kafkaTemplate;
+    private KafkaTemplate<String, Object> kafkaTemplate;
 
     @Transactional
     public Order placeOrder(OrderRequest request) {
